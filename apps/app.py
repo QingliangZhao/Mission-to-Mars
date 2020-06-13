@@ -21,7 +21,8 @@ def scrape():
    mars = mongo.db.mars
    mars_data = scraping.scrape_all()
    mars.update({}, mars_data, upsert=True) # upsert=True: create a new document if one doesn’t already exist.
-   return "Scraping Successful!"
+   # return "Scraping Successful!"
+   return render_template("scraping_successful.html")
 
 if __name__ == "__main__":
    app.run(debug=True)
